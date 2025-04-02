@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #faf8ef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 500px;
+}
+
+h1 {
+    color: #776e65;
+    font-size: 48px;
+    margin-bottom: 20px;
+}
+
+.score {
+    color: #776e65;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    background: #bbada0;
+    padding: 10px;
+    border-radius: 6px;
+    width: min(400px, 95vw);
+    aspect-ratio: 1/1;
+    margin: 0 auto;
+    touch-action: none;
+}
+
+.cell {
+    background: #cdc1b4;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: min(36px, 9vw);
+    font-weight: bold;
+    color: #776e65;
+    aspect-ratio: 1;
+    transition: all 0.15s ease;
+}
+
+.cell[data-value="2"] { background: #eee4da; }
+.cell[data-value="4"] { background: #ede0c8; }
+.cell[data-value="8"] { background: #f2b179; color: #f9f6f2; }
+.cell[data-value="16"] { background: #f59563; color: #f9f6f2; }
+.cell[data-value="32"] { background: #f67c5f; color: #f9f6f2; }
+.cell[data-value="64"] { background: #f65e3b; color: #f9f6f2; }
+.cell[data-value="128"] { background: #edcf72; color: #f9f6f2; font-size: min(32px, 8vw); }
+.cell[data-value="256"] { background: #edcc61; color: #f9f6f2; font-size: min(32px, 8vw); }
+.cell[data-value="512"] { background: #edc850; color: #f9f6f2; font-size: min(32px, 8vw); }
+.cell[data-value="1024"] { background: #edc53f; color: #f9f6f2; font-size: min(28px, 7vw); }
+.cell[data-value="2048"] { background: #edc22e; color: #f9f6f2; font-size: min(28px, 7vw); }
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 18px;
+    background: #8f7a66;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+button:hover {
+    background: #7f6a56;
+}
+
+.info {
+    margin-top: 20px;
+    color: #776e65;
+    font-size: 14px;
+}
+
+@media (max-width: 600px) {
+    h1 {
+        font-size: 36px;
+    }
+    .score {
+        font-size: 20px;
+    }
+    button {
+        font-size: 16px;
+        padding: 8px 16px;
+    }
+} 
